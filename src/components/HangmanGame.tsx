@@ -148,6 +148,7 @@ const HangmanGame = () => {
       toast({
         title: "Word Complete!",
         description: `+${wordScore} points | +${timeReward}s | Streak: ${streakCount + 1}`,
+        duration: 5000,
       });
     }
   }, [isWordGuessed, gameOver, isLoading, currentWord.word.length, streakCount, fetchNewWord, wordLoadTime]);
