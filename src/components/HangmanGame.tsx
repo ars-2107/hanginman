@@ -57,10 +57,13 @@ const HangmanGame = () => {
       setWordLoadTime(Date.now());
 
       const wordLength = word.word.length;
+      console.log("wordLength", wordLength);
       const hintCount = getHintLettersCount(wordLength);
+      console.log("hintCount", hintCount);
       const hintPositions = getRandomPositions(wordLength, hintCount);
+      console.log("hintPositions", hintPositions);
       const newHintLetters = hintPositions.map(pos => word.word[pos]);
-      console.log(newHintLetters);
+      console.log("newHintLetters", newHintLetters);
       setHintLetters(newHintLetters);
       setGuessedLetters(newHintLetters);
     } catch (error) {
@@ -129,7 +132,6 @@ const HangmanGame = () => {
   useEffect(() => {
     if (isWordGuessed && !gameOver && !isLoading) {
       const timeTaken = Math.floor((Date.now() - wordLoadTime) / 1000);
-      console.log(timeTaken);
       const wordScore = calculateScore(
         currentWord.word.length,
         timeTaken,

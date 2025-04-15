@@ -106,7 +106,7 @@ export const calculateScore = (
 };
 
 export const getHintLettersCount = (wordLength: number): number => {
-  return Math.floor((wordLength - 1) / 2);
+  return wordLength % 2 !== 0 ? Math.ceil((wordLength - 1) / 2) : Math.floor((wordLength - 1) / 2);
 };
 
 export const getRandomPositions = (wordLength: number, count: number): number[] => {
