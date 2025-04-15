@@ -11,6 +11,8 @@ import { getRandomWord, calculateScore, WordData, getHintLettersCount, getRandom
 import { setHighScores } from "@/utils/cookieUtils";
 import { toast } from "@/components/ui/use-toast";
 import Header from "./Header";
+import { useMusicPlayer } from "@/hooks/useMusicPlayer";
+import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 const MAX_WRONG_GUESSES = 6;
 const MAX_TIME = 300; // 5 minutes
@@ -18,6 +20,8 @@ const TIME_PENALTY = 5; // 5 seconds penalty for skipping
 const TIME_REWARD_FACTOR = 2; // 2 seconds per character in the word
 
 const HangmanGame = () => {
+  const { playMusic } = useMusicPlayer();
+  const { playClick, playRightGuess, playWrongGuess, playLose } = useSoundEffects();
   const [currentWord, setCurrentWord] = useState<WordData>({ word: '', category: '', hint: '' });
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const [wrongLetters, setWrongLetters] = useState<string[]>([]);
@@ -46,6 +50,17 @@ const HangmanGame = () => {
   // Check if time is running low (under 10 seconds)
   const isTimeRunningOut = timeLeft <= 10;
 
+  // Auto-play music when game starts
+  useEffect(() => {
+    if (!showPlayModal) {
+      const savedMusic = localStorage.getItem('hangmanMusic') || 'none';
+      if (savedMusic !== 'none') {
+        playMusic(savedMusic);
+      }
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showPlayModal]);
+
   // Fetch new word
   const fetchNewWord = useCallback(async () => {
     setIsLoading(true);
@@ -57,13 +72,9 @@ const HangmanGame = () => {
       setWordLoadTime(Date.now());
 
       const wordLength = word.word.length;
-      console.log("wordLength", wordLength);
       const hintCount = getHintLettersCount(wordLength);
-      console.log("hintCount", hintCount);
       const hintPositions = getRandomPositions(wordLength, hintCount);
-      console.log("hintPositions", hintPositions);
       const newHintLetters = hintPositions.map(pos => word.word[pos]);
-      console.log("newHintLetters", newHintLetters);
       setHintLetters(newHintLetters);
       setGuessedLetters(newHintLetters);
     } catch (error) {
@@ -97,23 +108,27 @@ const HangmanGame = () => {
 
     if (currentWord.word.includes(letter)) {
       setIsCorrectGuess(true);
+      playRightGuess();
       setTimeout(() => setIsCorrectGuess(false), 1000);
     } else {
       setWrongLetters((prev) => [...prev, letter]);
       setWrongGuesses((prev) => prev + 1);
+      playWrongGuess();
     }
-  }, [currentWord.word, guessedLetters, gameOver, isLoading]);
+  }, [currentWord.word, guessedLetters, gameOver, isLoading, playRightGuess, playWrongGuess]);
 
   // Handle refresh/skip
   const handleRefresh = useCallback(async () => {
+    playClick();
     setTimeLeft((prev) => Math.max(1, prev - TIME_PENALTY));
     setStreakCount(0);
     await fetchNewWord();
     toast({
       title: "Word Skipped",
       description: `Time penalty: -${TIME_PENALTY} seconds`,
+      duration: 5000,
     });
-  }, [fetchNewWord]);
+  }, [fetchNewWord, playClick]);
 
   // Timer countdown
   useEffect(() => {
@@ -125,8 +140,9 @@ const HangmanGame = () => {
       return () => clearTimeout(timerId);
     } else if (timeLeft === 0 && !gameOver) {
       setGameOver(true);
+      playLose();
     }
-  }, [timeLeft, gameOver, isLoading, showPlayModal]);
+  }, [timeLeft, gameOver, isLoading, showPlayModal, playLose]);
 
   // Watch for word completion
   useEffect(() => {
@@ -157,8 +173,9 @@ const HangmanGame = () => {
   useEffect(() => {
     if (wrongGuesses >= MAX_WRONG_GUESSES && !gameOver) {
       setGameOver(true);
+      playLose();
     }
-  }, [wrongGuesses, gameOver]);
+  }, [wrongGuesses, gameOver, playLose]);
 
   // Save high scores when game is over
   useEffect(() => {
@@ -168,8 +185,10 @@ const HangmanGame = () => {
   }, [gameOver, score, wordCount]);
 
   const handleGameOver = useCallback(() => {
+    playClick();
+    playLose();
     setGameOver(true);
-  }, []);
+  }, [playClick, playLose]);
 
   if (isLoading) {
     return (

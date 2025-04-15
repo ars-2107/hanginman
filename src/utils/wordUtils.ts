@@ -106,7 +106,14 @@ export const calculateScore = (
 };
 
 export const getHintLettersCount = (wordLength: number): number => {
-  return wordLength % 2 !== 0 ? Math.ceil((wordLength - 1) / 2) : Math.floor((wordLength - 1) / 2);
+  const savedDifficulty = localStorage.getItem("hangmanDifficulty") || "medium";
+  if (savedDifficulty === "easy") {
+    return wordLength % 2 !== 0 ? Math.ceil((wordLength - 1) / 2) : Math.floor((wordLength - 1) / 2) + 1;
+  } else if (savedDifficulty === "medium") {
+    return wordLength % 2 !== 0 ? Math.ceil((wordLength - 1) / 2) : Math.floor((wordLength - 1) / 2);
+  } else {
+    return wordLength % 2 !== 0 ? Math.ceil((wordLength - 1) / 2) : Math.floor((wordLength - 1) / 2) - 1;
+  }
 };
 
 export const getRandomPositions = (wordLength: number, count: number): number[] => {

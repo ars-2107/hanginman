@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { getHighScores } from "@/utils/cookieUtils";
 import { Button } from "./ui/button";
+import { Settings, Trophy } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 interface PlayModalProps {
   onStart: () => void;
@@ -8,10 +11,22 @@ interface PlayModalProps {
 
 const PlayModal = ({ onStart }: PlayModalProps) => {
   const [highScores, setHighScores] = useState({ score: 0, wordCount: 0 });
+  const navigate = useNavigate();
+  const { playClick } = useSoundEffects();
 
   useEffect(() => {
     setHighScores(getHighScores());
   }, []);
+
+  const handleStart = () => {
+    playClick();
+    onStart();
+  };
+
+  const handleSettings = () => {
+    playClick();
+    navigate('/settings');
+  };
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-70 animate-fade-in">
@@ -56,12 +71,26 @@ const PlayModal = ({ onStart }: PlayModalProps) => {
           </div>
         </div>
 
-        <Button
-          onClick={onStart} 
-          className="w-full bg-hangman-primary hover:bg-hangman-primary/90"
-        >
-          Play
-        </Button>
+        <div className="flex gap-2">
+          <Button
+            onClick={handleStart} 
+            className="flex-1 bg-hangman-primary hover:bg-hangman-primary/90 dark:text-white"
+          >
+            Play
+          </Button>
+          <Button
+            onClick={handleSettings}
+            className="p-2 w-10 h-10 bg-hangman-primary hover:bg-hangman-primary/90 dark:text-white"
+          >
+            <Settings className="w-5 h-5" />
+          </Button>
+          <Button
+            onClick={() => { playClick(); navigate('/leaderboard') }}
+            className="p-2 w-10 h-10 bg-hangman-primary hover:bg-hangman-primary/90 dark:text-white"
+          >
+            <Trophy size={20} />
+          </Button>
+        </div>
       </div>
     </div>
   );

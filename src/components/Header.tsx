@@ -1,5 +1,6 @@
 import { Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
+import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 interface HeaderProps {
   onGameOver: () => void;
@@ -7,8 +8,10 @@ interface HeaderProps {
 
 const Header = ({ onGameOver }: HeaderProps) => {
   const { theme, setTheme } = useTheme();
+  const { playClick, playLose } = useSoundEffects();
 
   const toggleTheme = () => {
+    playClick();
     setTheme(theme === "light" ? "dark" : "light");
   };
 
@@ -26,7 +29,7 @@ const Header = ({ onGameOver }: HeaderProps) => {
       
       <div className="flex items-center sm:mr-6 gap-2">
         <button
-          onClick={onGameOver}
+          onClick={() => { onGameOver(); playLose(); }}
           className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
           aria-label="End Game"
         >

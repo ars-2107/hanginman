@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ChatBubble from "./Chatbubble";
 
 type HangmanProps = {
   wrongGuesses: number;
@@ -25,14 +26,59 @@ const HangmanSVG = ({
   // Animation states for visual feedback
   const [pulseEffect, setPulseEffect] = useState(false);
   
-  // Trigger pulse animation when correct guess is made
+  const [showChat, setShowChat] = useState(false);
+  const [chatMessage, setChatMessage] = useState("");
+
+  const correctGuessMessages = [
+    "Yes! Good job!",
+    "That's right!",
+    "Nice guess!",
+    "You're smart!",
+    "Keep going!",
+    "You'll save me!",
+    "Phew, that was close!",
+    "You're on fire!",
+    "Brilliant!",
+    "That's the way!"
+  ];
+
+  const wrongGuessMessages = [
+    "Oh no!",
+    "That's not right...",
+    "Try another letter!",
+    "I'm getting nervous!",
+    "Please be careful!",
+    "I don't like heights!",
+    "Help me please!",
+    "Think harder!",
+    "I'm feeling dizzy!",
+    "Not that one!"
+  ];
+
   useEffect(() => {
-    if (isCorrectGuess) {
-      setPulseEffect(true);
-      const timer = setTimeout(() => setPulseEffect(false), 600);
+    setShowChat(false);
+
+    if (Math.random() < 0.2) {
+      let messages;
+      if (isCorrectGuess) {
+        messages = correctGuessMessages;
+      } else if (wrongGuesses > 0 && wrongGuesses <= maxGuesses) {
+        messages = wrongGuessMessages;
+      } else {
+        return;
+      }
+      
+      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      setChatMessage(randomMessage);
+      setShowChat(true);
+      
+      const timer = setTimeout(() => {
+        setShowChat(false);
+      }, 3000);
+      
       return () => clearTimeout(timer);
     }
-  }, [isCorrectGuess]);
+  }, [wrongGuesses, isCorrectGuess]);
 
   return (
     <div className="relative w-full m-3 mt-5 mb-2 max-w-[200px] h-[180px] mx-auto">
@@ -130,17 +176,6 @@ const HangmanSVG = ({
           opacity="0.2" 
         />
 
-        {/* Optional face expression based on game state */}
-        {showHead && isGameOver && (
-          <g>
-            <path d="M115,48 L118,52" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M118,48 L115,52" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M122,48 L125,52" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M125,48 L122,52" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M116,58 C118,56 122,56 124,58" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-          </g>
-        )}
-
         {showHead && !isGameOver && (
           <g>
             <circle cx="116" cy="48" r="1" fill="currentColor" />
@@ -153,6 +188,14 @@ const HangmanSVG = ({
           </g>
         )}
       </svg>
+
+      {showChat && (
+        <ChatBubble
+          isVisible={showChat} 
+          message={chatMessage}
+          position={"right"}
+        />
+      )}
     </div>
   );
 };
