@@ -56,7 +56,7 @@ const GameOverModal = ({
 
           {isNewHighScore && (
             <div className="bg-hangman-primary text-white p-3 rounded-md mb-4 text-center font-bold">
-              🌟 New High Score!
+              New High Score!
             </div>
           )}
           
