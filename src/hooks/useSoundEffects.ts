@@ -14,7 +14,7 @@ export const useSoundEffects = () => {
 
     // Set initial volume from localStorage
     const savedVolume = parseInt(localStorage.getItem('hangmanSoundVolume') || '75');
-    const volume = savedVolume / 1000;
+    const volume = savedVolume / 100;
 
     clickSound.current.volume = volume;
     rightGuessSound.current.volume = volume * 0.2;
