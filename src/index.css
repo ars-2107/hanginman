@@ -130,7 +130,7 @@
   }
 
   .key-correct {
-    @apply bg-hangman-success text-white border-hangman-success;
+    @apply bg-hangman-primary text-white border-hangman-primary;
   }
 
   .key-wrong {

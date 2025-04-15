@@ -7,7 +7,7 @@ import ScoreTimer from "./ScoreTimer";
 import GameOverModal from "./GameOverModal";
 import PlayModal from "./PlayModal";
 import Loader from "./Loader";
-import { getRandomWord, calculateScore, WordData } from "@/utils/wordUtils";
+import { getRandomWord, calculateScore, WordData, getHintLettersCount, getRandomPositions } from "@/utils/wordUtils";
 import { setHighScores } from "@/utils/cookieUtils";
 import { toast } from "@/components/ui/use-toast";
 import Header from "./Header";
@@ -31,6 +31,7 @@ const HangmanGame = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [wordLoadTime, setWordLoadTime] = useState<number>(0);
   const [showPlayModal, setShowPlayModal] = useState(true);
+  const [hintLetters, setHintLetters] = useState<string[]>([]);
   
   // Get distinct correct letters (letters in the word that have been guessed)
   const correctLetters = guessedLetters.filter(letter => 
@@ -54,6 +55,14 @@ const HangmanGame = () => {
       setGuessedLetters([]);
       setWrongLetters([]);
       setWordLoadTime(Date.now());
+
+      const wordLength = word.word.length;
+      const hintCount = getHintLettersCount(wordLength);
+      const hintPositions = getRandomPositions(wordLength, hintCount);
+      const newHintLetters = hintPositions.map(pos => word.word[pos]);
+      console.log(newHintLetters);
+      setHintLetters(newHintLetters);
+      setGuessedLetters(newHintLetters);
     } catch (error) {
       console.error('Error fetching word:', error);
     } finally {
@@ -184,7 +193,11 @@ const HangmanGame = () => {
         isTimeRunningOut={isTimeRunningOut}
       />
       
-      <WordDisplay word={currentWord.word} guessedLetters={guessedLetters} />
+      <WordDisplay 
+        word={currentWord.word} 
+        guessedLetters={guessedLetters} 
+        hintLetters={hintLetters}
+      />
       
       <HintSection
         category={currentWord.category || ''}

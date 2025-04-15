@@ -104,3 +104,19 @@ export const calculateScore = (
   const timeTakenPoints = timeTaken > 120 ? 0 : 120 - timeTaken;
   return wordLength * 10 + timeTakenPoints + streakCount + 5;
 };
+
+export const getHintLettersCount = (wordLength: number): number => {
+  return Math.floor((wordLength - 1) / 2);
+};
+
+export const getRandomPositions = (wordLength: number, count: number): number[] => {
+  const positions: number[] = [];
+  while (positions.length < count) {
+    const pos = Math.floor(Math.random() * wordLength);
+    if (!positions.includes(pos)) {
+      positions.push(pos);
+    }
+  }
+  
+  return positions;
+};
