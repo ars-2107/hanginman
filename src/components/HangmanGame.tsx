@@ -10,6 +10,7 @@ import Loader from "./Loader";
 import { getRandomWord, calculateScore, WordData } from "@/utils/wordUtils";
 import { setHighScores } from "@/utils/cookieUtils";
 import { toast } from "@/components/ui/use-toast";
+import Header from "./Header";
 
 const MAX_WRONG_GUESSES = 6;
 const MAX_TIME = 300; // 5 minutes
@@ -154,8 +155,17 @@ const HangmanGame = () => {
     }
   }, [gameOver, score, wordCount]);
 
+  const handleGameOver = useCallback(() => {
+    setGameOver(true);
+  }, []);
+
   if (isLoading) {
-    return <Loader />;
+    return (
+      <>
+        <Header onGameOver={handleGameOver} />
+        <Loader />
+      </>
+    );
   }
 
   if (showPlayModal) {
@@ -164,6 +174,7 @@ const HangmanGame = () => {
 
   return (
     <div className="flex flex-col h-full shadow-md">
+      <Header onGameOver={handleGameOver} />
       <ScoreTimer score={score} time={timeLeft} maxTime={MAX_TIME} />
       
       <HangmanSVG
