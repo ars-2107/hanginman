@@ -50,7 +50,7 @@ export const useMusicPlayer = () => {
     const savedVolume = parseInt(localStorage.getItem('hangmanMusicVolume') || '0');
     const musicOption = MUSIC_OPTIONS.find(option => option.id === musicId);
     const volumeScale = musicOption?.volumeScale || 0.1;
-    audioRef.current.volume = (savedVolume / 500) * volumeScale;
+    audioRef.current.volume = (savedVolume / 100) * volumeScale;
     audioRef.current.play()
       .catch(error => console.error('Error playing music:', error));
 
