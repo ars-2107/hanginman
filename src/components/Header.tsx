@@ -14,7 +14,7 @@ const Header = ({ onGameOver }: HeaderProps) => {
 
   return (
     <header className="flex justify-between items-center w-full p-4">
-      <div className="flex items-center sm:ml-6">
+      <div className="flex items-center sm:ml-8">
         <h1 className="text-xl font-bold">
           <span className="bg-gradient-to-r from-hangman-primary to-hangman-secondary bg-clip-text text-transparent">
             HANGIN'<span className="text-black dark:text-white">MAN</span>
