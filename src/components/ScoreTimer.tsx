@@ -31,11 +31,11 @@ const ScoreTimer = ({ score, time, maxTime }: ScoreTimerProps) => {
       <div className="flex justify-between items-center mb-2">
         <div className="flex items-center">
           <Flame size={20} className="text-hangman-danger mr-1" />
-          <span className="font-mono font-bold">{formattedScore}</span>
+          <span className="font-mono font-bold pt-0.5">{formattedScore}</span>
         </div>
         <div className="flex items-center">
           <Timer size={20} className="text-hangman-danger mr-1" />
-          <div className="font-mono font-bold">{formattedTime}</div>
+          <div className="font-mono font-bold pt-0.5">{formattedTime}</div>
         </div>
       </div>
       

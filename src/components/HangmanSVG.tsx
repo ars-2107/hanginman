@@ -14,7 +14,6 @@ const HangmanSVG = ({
   isCorrectGuess,
   isTimeRunningOut,
 }: HangmanProps) => {
-  // Calculate which body parts to show based on wrong guesses
   const showHead = wrongGuesses >= 1;
   const showBody = wrongGuesses >= 2;
   const showLeftArm = wrongGuesses >= 3;
@@ -23,9 +22,21 @@ const HangmanSVG = ({
   const showRightLeg = wrongGuesses >= 6;
   const isGameOver = wrongGuesses >= maxGuesses;
 
-  // Animation states for visual feedback
-  const [pulseEffect, setPulseEffect] = useState(false);
-  
+  const [headAccessory, setHeadAccessory] = useState("none");
+
+  useEffect(() => {
+    const savedHeadAccessory = localStorage.getItem("characterHeadAccessories");
+    if (savedHeadAccessory) {
+      setHeadAccessory(savedHeadAccessory);
+    }
+  }, []);
+
+  const hairBow = headAccessory === "hairBow";
+  const purpleFlower = headAccessory === "purpleFlower";
+  const sharpHat = headAccessory === "sharpHat";
+  const roundHat = headAccessory === "roundHat";
+  const baseballHat = headAccessory === "baseballHat";
+
   const [showChat, setShowChat] = useState(false);
   const [chatMessage, setChatMessage] = useState("");
 
@@ -54,6 +65,22 @@ const HangmanSVG = ({
     "I'm feeling dizzy!",
     "Not that one!"
   ];
+
+  const [eyesClosed, setEyesClosed] = useState(false);
+
+  useEffect(() => {
+    const blink = () => {
+      setEyesClosed(true);
+      setTimeout(() => setEyesClosed(false), 100);
+      setTimeout(() => {
+        setEyesClosed(true);
+        setTimeout(() => setEyesClosed(false), 100);
+      }, 200);
+    };
+
+    const blinkInterval = setInterval(blink, 5000);
+    return () => clearInterval(blinkInterval);
+  }, []);
 
   useEffect(() => {
     setShowChat(false);
@@ -89,7 +116,6 @@ const HangmanSVG = ({
           isGameOver ? "opacity-80" : ""
         }`}
       >
-        {/* Gallows structure with rounded corners */}
         <path 
           d="M40,150 H160 M60,150 V30 C60,24 62,20 68,20 H114 C120,20 120,26 120,30 V40" 
           stroke="currentColor" 
@@ -99,7 +125,6 @@ const HangmanSVG = ({
           strokeLinejoin="round"
         />
 
-        {/* Hangman body parts */}
         {showHead && (
           <circle
             cx="120"
@@ -167,20 +192,130 @@ const HangmanSVG = ({
           />
         )}
 
-        {/* Add a subtle platform at the bottom for aesthetic appeal */}
-        <ellipse 
-          cx="100" 
-          cy="150" 
-          rx="65" 
-          ry="3" 
-          fill="currentColor" 
-          opacity="0.2" 
-        />
-
         {showHead && !isGameOver && (
           <g>
-            <circle cx="116" cy="48" r="1" fill="currentColor" />
-            <circle cx="124" cy="48" r="1" fill="currentColor" />
+            {hairBow && (
+              <g transform="translate(125, 40) scale(0.5) rotate(200)">
+                <path
+                  d="M0,0 C-5,-10 -15,-10 -20,0 C-15,5 -5,5 0,0 Z"
+                  fill="#ff69b4"
+                />
+                <path
+                  d="M0,0 C5,-10 15,-10 20,0 C15,5 5,5 0,0 Z"
+                  fill="#ff69b4"
+                />
+                <circle cx="0" cy="0" r="4" fill="#ff1493" />
+              </g>
+            )}
+
+            {purpleFlower && (
+              <g transform="translate(127, 42) scale(0.35)">
+                <path
+                  d="M0,0 C-5,-10 -15,-10 -20,0 C-15,5 -5,5 0,0 Z"
+                  fill="#9b59b6"
+                  transform="rotate(0)"
+                />
+                <path
+                  d="M0,0 C5,-10 15,-10 20,0 C15,5 5,5 0,0 Z"
+                  fill="#9b59b6"
+                  transform="rotate(60)"
+                />
+                <path
+                  d="M0,0 C-5,-10 -15,-10 -20,0 C-15,5 -5,5 0,0 Z"
+                  fill="#9b59b6"
+                  transform="rotate(120)"
+                />
+                <path
+                  d="M0,0 C5,-10 15,-10 20,0 C15,5 5,5 0,0 Z"
+                  fill="#9b59b6"
+                  transform="rotate(180)"
+                />
+                <path
+                  d="M0,0 C-5,-10 -15,-10 -20,0 C-15,5 -5,5 0,0 Z"
+                  fill="#9b59b6"
+                  transform="rotate(240)"
+                />
+                <path
+                  d="M0,0 C5,-10 15,-10 20,0 C15,5 5,5 0,0 Z"
+                  fill="#9b59b6"
+                  transform="rotate(300)"
+                />
+
+                {/* Pink center of the flower */}
+                <circle cx="0" cy="0" r="6" fill="#ff69b4" />
+              </g>
+            )}
+
+            {roundHat && (
+              <g transform="translate(120, 41)">
+                <ellipse cx="0" cy="0" rx="20" ry="3" fill="#8B4513" />
+                
+                <path
+                  d="M-10,-2 Q0,-15 10,-2 Z"
+                  fill="#A0522D"
+                />
+              </g>
+            )}
+
+            {sharpHat && (
+              <g transform="translate(120, 41)">
+                <ellipse cx="0" cy="0" rx="18" ry="4" fill="#6B3F2A" />
+
+                <path
+                  d="
+                    M -10,0
+                    L -6,-10
+                    L 6,-10
+                    L 10,0
+                    Z
+                  "
+                  fill="#4E2A1A"
+                />
+              </g>
+            )}
+            {baseballHat && (
+              <g transform="translate(120, 42)">
+                <path
+                  d="
+                    M -8,2
+                    A 10,3 0 0 1 18,2
+                    Z
+                  "
+                  fill="#4aa8ff"
+                />
+
+
+                <path
+                  d="
+                    M -10,2
+                    A 7,6 0 0 1 10,2
+                    Z
+                  "
+                  fill="#1E90FF"
+                />
+              </g>
+            )}
+
+            {!eyesClosed && (
+              <ellipse
+                cx="116"
+                cy="48"
+                rx="1"
+                ry="2"
+                fill="currentColor"
+                className="invert"
+              />
+            )}
+            {!eyesClosed && (
+              <ellipse
+                cx="124"
+                cy="48"
+                rx="1"
+                ry="2"
+                fill="currentColor"
+                className="invert"
+              />
+            )}
             {wrongGuesses > 3 ? (
               <path d="M116,56 C118,54 122,54 124,56" stroke="currentColor" strokeWidth="1" strokeLinecap="round" fill="none" />
             ) : (
