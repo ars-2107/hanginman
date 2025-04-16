@@ -19,6 +19,7 @@ const CharacterPreview = ({
   const sharpHat = headAccessory === "sharpHat";
   const roundHat = headAccessory === "roundHat";
   const baseballHat = headAccessory === "baseballHat";
+  const crown = headAccessory === "crown";
 
   const getViewBox = () => {
     if (showLegs) return "0 0 200 180";
@@ -67,17 +68,20 @@ const CharacterPreview = ({
 
         {/* Head Accessories */}
         {hairBow && (
-          <g transform="translate(105, 40) scale(0.5) rotate(200)">
+          <g transform="translate(105, 42) rotate(25)">
+            {/* Left petal */}
             <path
-              d="M0,0 C-5,-10 -15,-10 -20,0 C-15,5 -5,5 0,0 Z"
+              d="M0,0 L-7,-4.4 L-10.5,0 L-7,4.4 Z"
               fill="#ff69b4"
             />
+            {/* Right petal */}
             <path
-              d="M0,0 C5,-10 15,-10 20,0 C15,5 5,5 0,0 Z"
+              d="M0,0 L7,-4.4 L10.5,0 L7,4.4 Z"
               fill="#ff69b4"
             />
-            <circle cx="0" cy="0" r="4" fill="#ff1493" />
-          </g>
+            {/* Center knot */}
+            <circle cx="0" cy="0" r="1.75" fill="#ff1493" />
+          </g>            
         )}
 
         {purpleFlower && (
@@ -146,7 +150,62 @@ const CharacterPreview = ({
               d="M -10,2 A 7,6 0 0 1 10,2 Z"
               fill="#1E90FF"
             />
+            
+            <text
+              x="0"
+              y="-1"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fontSize="6"
+              fontWeight="bold"
+              fill="white"
+            >
+              H
+            </text>
           </g>
+        )}
+
+        {crown && (
+          <g transform="translate(100, 38)">
+            <path
+              d="M-4,0 L-2.5,-9 L-1,0 Z"
+              fill="#b8860b"
+            />
+            <path
+              d="M1,0 L2.5,-9 L4,0 Z"
+              fill="#b8860b"
+            />
+            <path
+              d="M-7.5,0 L-5,-7.5 L-2.5,0 Z"
+              fill="#ffd700"
+            />
+            <path
+              d="M2.5,0 L5,-7.5 L7.5,0 Z"
+              fill="#ffd700"
+            />
+            <path
+              d="M-2.5,0 L0,-10.5 L2.5,0 Z"
+              fill="#ffd700"
+            />
+            <path
+              d="M-10,0 L-7.5,-9 L-5,0 Z"
+              fill="#ffd700"
+            />
+            <path
+              d="M5,0 L7.5,-9 L10,0 Z"
+              fill="#ffd700"
+            />
+            <rect
+              x="-10"
+              y="0"
+              width="20"
+              height="7"
+              fill="#ffd700"
+            />
+            <circle cx="-6" cy="3" r="1.2" fill="red" />
+            <circle cx="0" cy="3" r="1.2" fill="red" />
+            <circle cx="6" cy="3" r="1.2" fill="red" />
+          </g>            
         )}
 
         {/* Face */}

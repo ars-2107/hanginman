@@ -70,7 +70,8 @@ const Settings = () => {
     { id: "hairBow", name: "Hair Bow" },
     { id: "sharpHat", name: "Sharp Hat" },
     { id: "purpleFlower", name: "Purple Flower" },
-    { id: "roundHat", name: "Round Hat" }
+    { id: "roundHat", name: "Round Hat" },
+    { id: "crown", name: "Crown" }
   ];
 
   return (

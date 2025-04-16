@@ -36,6 +36,7 @@ const HangmanSVG = ({
   const sharpHat = headAccessory === "sharpHat";
   const roundHat = headAccessory === "roundHat";
   const baseballHat = headAccessory === "baseballHat";
+  const crown = headAccessory === "crown";
 
   const [showChat, setShowChat] = useState(false);
   const [chatMessage, setChatMessage] = useState("");
@@ -195,17 +196,17 @@ const HangmanSVG = ({
         {showHead && !isGameOver && (
           <g>
             {hairBow && (
-              <g transform="translate(125, 40) scale(0.5) rotate(200)">
+              <g transform="translate(125, 42) rotate(25)">
                 <path
-                  d="M0,0 C-5,-10 -15,-10 -20,0 C-15,5 -5,5 0,0 Z"
+                  d="M0,0 L-7,-4.4 L-10.5,0 L-7,4.4 Z"
                   fill="#ff69b4"
                 />
                 <path
-                  d="M0,0 C5,-10 15,-10 20,0 C15,5 5,5 0,0 Z"
+                  d="M0,0 L7,-4.4 L10.5,0 L7,4.4 Z"
                   fill="#ff69b4"
                 />
-                <circle cx="0" cy="0" r="4" fill="#ff1493" />
-              </g>
+                <circle cx="0" cy="0" r="1.75" fill="#ff1493" />
+              </g>            
             )}
 
             {purpleFlower && (
@@ -240,8 +241,6 @@ const HangmanSVG = ({
                   fill="#9b59b6"
                   transform="rotate(300)"
                 />
-
-                {/* Pink center of the flower */}
                 <circle cx="0" cy="0" r="6" fill="#ff69b4" />
               </g>
             )}
@@ -273,6 +272,7 @@ const HangmanSVG = ({
                 />
               </g>
             )}
+
             {baseballHat && (
               <g transform="translate(120, 42)">
                 <path
@@ -283,8 +283,6 @@ const HangmanSVG = ({
                   "
                   fill="#4aa8ff"
                 />
-
-
                 <path
                   d="
                     M -10,2
@@ -293,7 +291,61 @@ const HangmanSVG = ({
                   "
                   fill="#1E90FF"
                 />
+                <text
+                  x="0"
+                  y="-1"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fontSize="6"
+                  fontWeight="bold"
+                  fill="white"
+                >
+                  H
+                </text>
               </g>
+            )}
+            
+            {crown && (
+              <g transform="translate(120, 38)">
+                <path
+                  d="M-4,0 L-2.5,-9 L-1,0 Z"
+                  fill="#b8860b"
+                />
+                <path
+                  d="M1,0 L2.5,-9 L4,0 Z"
+                  fill="#b8860b"
+                />
+                <path
+                  d="M-7.5,0 L-5,-7.5 L-2.5,0 Z"
+                  fill="#ffd700"
+                />
+                <path
+                  d="M2.5,0 L5,-7.5 L7.5,0 Z"
+                  fill="#ffd700"
+                />
+                <path
+                  d="M-2.5,0 L0,-10.5 L2.5,0 Z"
+                  fill="#ffd700"
+                />
+                <path
+                  d="M-10,0 L-7.5,-9 L-5,0 Z"
+                  fill="#ffd700"
+                />
+                <path
+                  d="M5,0 L7.5,-9 L10,0 Z"
+                  fill="#ffd700"
+                />
+                <rect
+                  x="-10"
+                  y="0"
+                  width="20"
+                  height="7"
+                  fill="#ffd700"
+                />
+                <circle cx="-6" cy="3" r="1.2" fill="red" />
+                <circle cx="0" cy="3" r="1.2" fill="red" />
+                <circle cx="6" cy="3" r="1.2" fill="red" />
+              </g>            
             )}
 
             {!eyesClosed && (
