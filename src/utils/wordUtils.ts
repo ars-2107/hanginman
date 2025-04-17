@@ -1,6 +1,7 @@
-import wordList from '../data/words.json';
+import allWordList from '../data/words.json';
+import wordList from '../data/words-1.json';
 
-const RANDOM_WORD_API = 'https://random-word-api.herokuapp.com/word';
+// const RANDOM_WORD_API = 'https://random-word-api.herokuapp.com/word';
 const DATAMUSE_API = 'https://api.datamuse.com/words';
 const DICTIONARY_API = 'https://api.dictionaryapi.dev/api/v2/entries/en';
 
@@ -48,20 +49,26 @@ export const getRandomWord = async (): Promise<WordData> => {
   while (attempts < maxAttempts) {
     try {
       const length = Math.floor(Math.random() * 5) + 4;
-      const response = await fetch(`${RANDOM_WORD_API}?lang=en&length=${length}&number=1`);
+      // const response = await fetch(`${RANDOM_WORD_API}?lang=en&length=${length}&number=1`);
       
-      if (!response.ok) {
+      // Filter words of the desired length from allWordList
+      const wordsOfLength = allWordList.filter(word => word.length === length);
+      if (wordsOfLength.length === 0) {
+      // if (!response.ok) {
         attempts++;
         continue;
       }
       
-      const [randomWord] = await response.json();
       
-      if (!randomWord || randomWord.length < 4) {
-        attempts++;
-        continue;
-      }
+      // const [randomWord] = await response.json();
+      
+      // if (!randomWord || randomWord.length < 4) {
+      //   attempts++;
+      //   continue;
+      // }
 
+      const randomWord = wordsOfLength[Math.floor(Math.random() * wordsOfLength.length)];
+      
       const definition = await getWordDefinition(randomWord);
       if (!definition) {
         attempts++;
@@ -83,13 +90,13 @@ export const getRandomWord = async (): Promise<WordData> => {
         category: '',
         definition: definition || '',
         similarWords: similarWords.length > 0
-        ? similarWords.map(w => w.word.charAt(0).toUpperCase() + w.word.slice(1)).join(', ')
-        : '',
+          ? similarWords.map(w => w.word.charAt(0).toUpperCase() + w.word.slice(1)).join(', ')
+          : '',
         hint: ''
       };
     } catch (error) {
       console.error('Error in getRandomWord:', error);
-      return getFallbackWord();
+      attempts++;
     }
   }
 
