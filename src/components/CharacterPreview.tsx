@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 type CharacterPreviewProps = {
   headAccessory?: string;
+  headType?: string;
   showTorso?: boolean;
   showArms?: boolean;
   showLegs?: boolean;
@@ -9,6 +10,7 @@ type CharacterPreviewProps = {
 
 const CharacterPreview = ({
   headAccessory = "none",
+  headType = "circleFace",
   showTorso = false,
   showArms = false,
   showLegs = false,
@@ -20,6 +22,8 @@ const CharacterPreview = ({
   const roundHat = headAccessory === "roundHat";
   const baseballHat = headAccessory === "baseballHat";
   const crown = headAccessory === "crown";
+  const circleFace = headType === "circleFace";
+  const squareFace = headType === "squareFace";
 
   const getViewBox = () => {
     if (showLegs) return "0 0 200 180";
@@ -57,14 +61,30 @@ const CharacterPreview = ({
         }}
       >
         {/* Head */}
-        <circle
-          cx="100"
-          cy="50"
-          r="10"
-          fill="currentColor"
-          stroke="currentColor"
-          strokeWidth="1"
-        />
+        {circleFace &&
+          <circle
+            cx="100"
+            cy="50"
+            r="10"
+            fill="currentColor"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+        }
+
+        {squareFace &&
+          <rect
+            x="90.5"
+            y="40"
+            width="19"
+            height="19"
+            fill="currentColor"
+            stroke="currentColor"
+            strokeWidth="1"
+            rx="4"
+            ry="4"
+          />
+        }
 
         {/* Head Accessories */}
         {hairBow && (

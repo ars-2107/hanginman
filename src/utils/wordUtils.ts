@@ -89,7 +89,7 @@ export const getRandomWord = async (): Promise<WordData> => {
       };
     } catch (error) {
       console.error('Error in getRandomWord:', error);
-      attempts++;
+      return getFallbackWord();
     }
   }
 

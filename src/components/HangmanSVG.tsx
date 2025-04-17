@@ -23,11 +23,18 @@ const HangmanSVG = ({
   const isGameOver = wrongGuesses >= maxGuesses;
 
   const [headAccessory, setHeadAccessory] = useState("none");
+  const [headType, setHeadType] = useState("circleFace");
 
   useEffect(() => {
     const savedHeadAccessory = localStorage.getItem("characterHeadAccessories");
+    const savedHeadType = localStorage.getItem("characterHeadType");
     if (savedHeadAccessory) {
       setHeadAccessory(savedHeadAccessory);
+    }
+    if (savedHeadType) {
+      setHeadType(savedHeadType);
+    } else {
+      setHeadType("circleFace");
     }
   }, []);
 
@@ -37,6 +44,8 @@ const HangmanSVG = ({
   const roundHat = headAccessory === "roundHat";
   const baseballHat = headAccessory === "baseballHat";
   const crown = headAccessory === "crown";
+  const circleFace = headType === "circleFace";
+  const squareFace = headType === "squareFace";
 
   const [showChat, setShowChat] = useState(false);
   const [chatMessage, setChatMessage] = useState("");
@@ -127,15 +136,33 @@ const HangmanSVG = ({
         />
 
         {showHead && (
-          <circle
-            cx="120"
-            cy="50"
-            r="10"
-            fill="currentColor"
-            stroke="currentColor"
-            strokeWidth="1"
-            className={isGameOver ? "opacity-80" : ""}
-          />
+          <>
+            {circleFace &&
+              <circle
+                cx="120"
+                cy="50"
+                r="10"
+                fill="currentColor"
+                stroke="currentColor"
+                strokeWidth="1"
+                className={isGameOver ? "opacity-80" : ""}
+              />
+            }
+
+            {squareFace && 
+              <rect
+                x="110.5"
+                y="40"
+                width="19"
+                height="19"
+                fill="currentColor"
+                stroke="currentColor"
+                strokeWidth="1"
+                rx="4"
+                ry="4"
+              />
+            }
+          </>
         )}
 
         {showBody && (
@@ -367,11 +394,6 @@ const HangmanSVG = ({
                 fill="currentColor"
                 className="invert"
               />
-            )}
-            {wrongGuesses > 3 ? (
-              <path d="M116,56 C118,54 122,54 124,56" stroke="currentColor" strokeWidth="1" strokeLinecap="round" fill="none" />
-            ) : (
-              <path d="M116,54 C118,56 122,56 124,54" stroke="currentColor" strokeWidth="1" strokeLinecap="round" fill="none" />
             )}
           </g>
         )}

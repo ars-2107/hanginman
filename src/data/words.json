@@ -1,87 +1,2037 @@
 [
-  { "word": "APPLE", "category": "Fruit", "hint": "Keeps the doctor away" },
-  { "word": "BEACH", "category": "Place", "hint": "Sandy shores and ocean waves" },
-  { "word": "CLOCK", "category": "Object", "hint": "It tells you the time" },
-  { "word": "DANCE", "category": "Action", "hint": "Moving to the rhythm of music" },
-  { "word": "EARTH", "category": "Planet", "hint": "The world we live on" },
-  { "word": "FLUTE", "category": "Music", "hint": "A woodwind instrument" },
-  { "word": "GRAPE", "category": "Fruit", "hint": "Used to make wine" },
-  { "word": "HOTEL", "category": "Building", "hint": "Temporary accommodation when traveling" },
-  { "word": "IGLOO", "category": "Structure", "hint": "A dome-shaped dwelling made of ice" },
-  { "word": "JELLY", "category": "Food", "hint": "A sweet, gelatinous dessert" },
-  { "word": "KOALA", "category": "Animal", "hint": "Australian marsupial that loves eucalyptus" },
-  { "word": "LEMON", "category": "Fruit", "hint": "Sour yellow citrus" },
-  { "word": "MOUSE", "category": "Animal", "hint": "Small rodent, also a computer device" },
-  { "word": "NIGHT", "category": "Time", "hint": "Opposite of day" },
-  { "word": "OCEAN", "category": "Nature", "hint": "Vast body of saltwater" },
-  { "word": "PIANO", "category": "Music", "hint": "A keyboard instrument" },
-  { "word": "QUEEN", "category": "Royalty", "hint": "Female ruler" },
-  { "word": "RIVER", "category": "Nature", "hint": "Flowing watercourse" },
-  { "word": "STARS", "category": "Space", "hint": "Glowing celestial bodies" },
-  { "word": "TRAIN", "category": "Vehicle", "hint": "Travels on rails" },
-  { "word": "UMBRELLA", "category": "Object", "hint": "Protects from rain" },
-  { "word": "VIOLIN", "category": "Music", "hint": "A stringed instrument" },
-  { "word": "WHALE", "category": "Animal", "hint": "Large marine mammal" },
-  { "word": "XENON", "category": "Element", "hint": "Noble gas" },
-  { "word": "YACHT", "category": "Vehicle", "hint": "Luxury boat" },
-  { "word": "ZEBRA", "category": "Animal", "hint": "Striped horse-like animal" },
-  { "word": "BASKET", "category": "Object", "hint": "Container for carrying things" },
-  { "word": "CAMERA", "category": "Object", "hint": "Captures images" },
-  { "word": "DESERT", "category": "Place", "hint": "Dry, sandy region" },
-  { "word": "ELEPHANT", "category": "Animal", "hint": "Large mammal with a trunk" },
-  { "word": "FOREST", "category": "Nature", "hint": "Area with many trees" },
-  { "word": "GUITAR", "category": "Music", "hint": "Stringed musical instrument" },
-  { "word": "HAMMER", "category": "Tool", "hint": "Used for pounding nails" },
-  { "word": "ISLAND", "category": "Place", "hint": "Land surrounded by water" },
-  { "word": "JUNGLE", "category": "Nature", "hint": "Dense tropical forest" },
-  { "word": "KANGAROO", "category": "Animal", "hint": "Australian marsupial that hops" },
-  { "word": "LIBRARY", "category": "Building", "hint": "Place with many books" },
-  { "word": "MOUNTAIN", "category": "Nature", "hint": "Large natural elevation" },
-  { "word": "NOODLE", "category": "Food", "hint": "Long, thin food made from dough" },
-  { "word": "ORANGE", "category": "Fruit", "hint": "Citrus fruit" },
-  { "word": "PENCIL", "category": "Object", "hint": "Used for writing or drawing" },
-  { "word": "RABBIT", "category": "Animal", "hint": "Small mammal with long ears" },
-  { "word": "SAILBOAT", "category": "Vehicle", "hint": "Boat propelled by sails" },
-  { "word": "TELESCOPE", "category": "Object", "hint": "Used to view distant objects" },
-  { "word": "UNICORN", "category": "Mythical", "hint": "Horse with a single horn" },
-  { "word": "VOLCANO", "category": "Nature", "hint": "Mountain with a vent" },
-  { "word": "WINDOW", "category": "Object", "hint": "Opening in a wall for light" },
-  { "word": "XYLOPHONE", "category": "Music", "hint": "Musical instrument with wooden bars" },
-  { "word": "YOGURT", "category": "Food", "hint": "Fermented milk product" },
-  { "word": "ZIPPER", "category": "Object", "hint": "Used to fasten clothing" },
-  { "word": "ANTELOPE", "category": "Animal", "hint": "Swift-running deer-like mammal" },
-  { "word": "BUTTERFLY", "category": "Animal", "hint": "Insect with colorful wings" },
-  { "word": "COMEDIAN", "category": "Person", "hint": "Entertainer who tells jokes" },
-  { "word": "DIAMOND", "category": "Gem", "hint": "Precious stone" },
-  { "word": "ECLIPSE", "category": "Space", "hint": "When one celestial body obscures another" },
-  { "word": "FIREWORK", "category": "Object", "hint": "Explosive display of light and sound" },
-  { "word": "GIRAFFE", "category": "Animal", "hint": "Tallest land animal" },
-  { "word": "HOSPITAL", "category": "Building", "hint": "Place for medical care" },
-  { "word": "JAZZ", "category": "Music", "hint": "Musical genre with improvisation" },
-  { "word": "KEYBOARD", "category": "Object", "hint": "Input device for computers" },
-  { "word": "LIZARD", "category": "Animal", "hint": "Reptile with scales" },
-  { "word": "MAGNET", "category": "Object", "hint": "Attracts iron" },
-  { "word": "NEBULA", "category": "Space", "hint": "Interstellar cloud of dust and gas" },
-  { "word": "OCTOPUS", "category": "Animal", "hint": "Sea creature with eight arms" },
-  { "word": "PARACHUTE", "category": "Object", "hint": "Used for safe descent from the air" },
-  { "word": "QUARTZ", "category": "Mineral", "hint": "Common mineral" },
-  { "word": "RAINBOW", "category": "Nature", "hint": "Multicolored arc in the sky" },
-  { "word": "SCULPTURE", "category": "Art", "hint": "Three-dimensional artwork" },
-  { "word": "TANGERINE", "category": "Fruit", "hint": "Small citrus fruit" },
-  { "word": "UNIVERSE", "category": "Space", "hint": "Everything that exists" },
-  { "word": "VACUUM", "category": "Object", "hint": "Removes dirt and dust" },
-  { "word": "WRESTLER", "category": "Person", "hint": "Athlete who grapples" },
-  { "word": "XENOLITH", "category": "Geology", "hint": "Foreign rock in igneous rock" },
-  { "word": "YARN", "category": "Object", "hint": "Spun thread used for knitting" },
-  { "word": "ZODIAC", "category": "Astrology", "hint": "Band of constellations" },
-  { "word": "ASTRONAUT", "category": "Person", "hint": "Space traveler" },
-  { "word": "BICYCLE", "category": "Vehicle", "hint": "Two-wheeled vehicle" },
-  { "word": "CACTUS", "category": "Plant", "hint": "Desert plant with spines" },
-  { "word": "DOLPHIN", "category": "Animal", "hint": "Intelligent marine mammal" },
-  { "word": "EQUATOR", "category": "Geography", "hint": "Imaginary line around the Earth" },
-  { "word": "FALCON", "category": "Animal", "hint": "Bird of prey" },
-  { "word": "GLACIER", "category": "Nature", "hint": "Large mass of ice" },
-  { "word": "HELICOPTER", "category": "Vehicle", "hint": "Aircraft with rotating blades" },
-  { "word": "ICEBERG", "category": "Nature", "hint": "Large floating mass of ice" },
-  { "word": "JUPITER", "category": "Planet", "hint": "Largest planet in our solar system" }
+  {
+    "word": "APPLE",
+    "category": "Fruit",
+    "hint": "Keeps the doctor away"
+  },
+  {
+    "word": "BEACH",
+    "category": "Place",
+    "hint": "Sandy shores and ocean waves"
+  },
+  {
+    "word": "CLOCK",
+    "category": "Object",
+    "hint": "It tells you the time"
+  },
+  {
+    "word": "DANCE",
+    "category": "Action",
+    "hint": "Moving to the rhythm of music"
+  },
+  {
+    "word": "EARTH",
+    "category": "Planet",
+    "hint": "The world we live on"
+  },
+  {
+    "word": "FLUTE",
+    "category": "Music",
+    "hint": "A woodwind instrument"
+  },
+  {
+    "word": "GRAPE",
+    "category": "Fruit",
+    "hint": "Used to make wine"
+  },
+  {
+    "word": "HOTEL",
+    "category": "Building",
+    "hint": "Temporary accommodation when traveling"
+  },
+  {
+    "word": "IGLOO",
+    "category": "Structure",
+    "hint": "A dome-shaped dwelling made of ice"
+  },
+  {
+    "word": "JELLY",
+    "category": "Food",
+    "hint": "A sweet, gelatinous dessert"
+  },
+  {
+    "word": "KOALA",
+    "category": "Animal",
+    "hint": "Australian marsupial that loves eucalyptus"
+  },
+  {
+    "word": "LEMON",
+    "category": "Fruit",
+    "hint": "Sour yellow citrus"
+  },
+  {
+    "word": "MOUSE",
+    "category": "Animal",
+    "hint": "Small rodent, also a computer device"
+  },
+  {
+    "word": "NIGHT",
+    "category": "Time",
+    "hint": "Opposite of day"
+  },
+  {
+    "word": "OCEAN",
+    "category": "Nature",
+    "hint": "Vast body of saltwater"
+  },
+  {
+    "word": "PIANO",
+    "category": "Music",
+    "hint": "A keyboard instrument"
+  },
+  {
+    "word": "QUEEN",
+    "category": "Royalty",
+    "hint": "Female ruler"
+  },
+  {
+    "word": "RIVER",
+    "category": "Nature",
+    "hint": "Flowing watercourse"
+  },
+  {
+    "word": "STARS",
+    "category": "Space",
+    "hint": "Glowing celestial bodies"
+  },
+  {
+    "word": "TRAIN",
+    "category": "Vehicle",
+    "hint": "Travels on rails"
+  },
+  {
+    "word": "UMBRELLA",
+    "category": "Object",
+    "hint": "Protects from rain"
+  },
+  {
+    "word": "VIOLIN",
+    "category": "Music",
+    "hint": "A stringed instrument"
+  },
+  {
+    "word": "WHALE",
+    "category": "Animal",
+    "hint": "Large marine mammal"
+  },
+  {
+    "word": "XENON",
+    "category": "Element",
+    "hint": "Noble gas"
+  },
+  {
+    "word": "YACHT",
+    "category": "Vehicle",
+    "hint": "Luxury boat"
+  },
+  {
+    "word": "ZEBRA",
+    "category": "Animal",
+    "hint": "Striped horse-like animal"
+  },
+  {
+    "word": "BASKET",
+    "category": "Object",
+    "hint": "Container for carrying things"
+  },
+  {
+    "word": "CAMERA",
+    "category": "Object",
+    "hint": "Captures images"
+  },
+  {
+    "word": "DESERT",
+    "category": "Place",
+    "hint": "Dry, sandy region"
+  },
+  {
+    "word": "ELEPHANT",
+    "category": "Animal",
+    "hint": "Large mammal with a trunk"
+  },
+  {
+    "word": "FOREST",
+    "category": "Nature",
+    "hint": "Area with many trees"
+  },
+  {
+    "word": "GUITAR",
+    "category": "Music",
+    "hint": "Stringed musical instrument"
+  },
+  {
+    "word": "HAMMER",
+    "category": "Tool",
+    "hint": "Used for pounding nails"
+  },
+  {
+    "word": "ISLAND",
+    "category": "Place",
+    "hint": "Land surrounded by water"
+  },
+  {
+    "word": "JUNGLE",
+    "category": "Nature",
+    "hint": "Dense tropical forest"
+  },
+  {
+    "word": "KANGAROO",
+    "category": "Animal",
+    "hint": "Australian marsupial that hops"
+  },
+  {
+    "word": "LIBRARY",
+    "category": "Building",
+    "hint": "Place with many books"
+  },
+  {
+    "word": "MOUNTAIN",
+    "category": "Nature",
+    "hint": "Large natural elevation"
+  },
+  {
+    "word": "NOODLE",
+    "category": "Food",
+    "hint": "Long, thin food made from dough"
+  },
+  {
+    "word": "ORANGE",
+    "category": "Fruit",
+    "hint": "Citrus fruit"
+  },
+  {
+    "word": "PENCIL",
+    "category": "Object",
+    "hint": "Used for writing or drawing"
+  },
+  {
+    "word": "RABBIT",
+    "category": "Animal",
+    "hint": "Small mammal with long ears"
+  },
+  {
+    "word": "SAILBOAT",
+    "category": "Vehicle",
+    "hint": "Boat propelled by sails"
+  },
+  {
+    "word": "UNICORN",
+    "category": "Mythical",
+    "hint": "Horse with a single horn"
+  },
+  {
+    "word": "VOLCANO",
+    "category": "Nature",
+    "hint": "Mountain with a vent"
+  },
+  {
+    "word": "WINDOW",
+    "category": "Object",
+    "hint": "Opening in a wall for light"
+  },
+  {
+    "word": "YOGURT",
+    "category": "Food",
+    "hint": "Fermented milk product"
+  },
+  {
+    "word": "ZIPPER",
+    "category": "Object",
+    "hint": "Used to fasten clothing"
+  },
+  {
+    "word": "ANTELOPE",
+    "category": "Animal",
+    "hint": "Swift-running deer-like mammal"
+  },
+  {
+    "word": "COMEDIAN",
+    "category": "Person",
+    "hint": "Entertainer who tells jokes"
+  },
+  {
+    "word": "DIAMOND",
+    "category": "Gem",
+    "hint": "Precious stone"
+  },
+  {
+    "word": "ECLIPSE",
+    "category": "Space",
+    "hint": "When one celestial body obscures another"
+  },
+  {
+    "word": "FIREWORK",
+    "category": "Object",
+    "hint": "Explosive display of light and sound"
+  },
+  {
+    "word": "GIRAFFE",
+    "category": "Animal",
+    "hint": "Tallest land animal"
+  },
+  {
+    "word": "HOSPITAL",
+    "category": "Building",
+    "hint": "Place for medical care"
+  },
+  {
+    "word": "JAZZ",
+    "category": "Music",
+    "hint": "Musical genre with improvisation"
+  },
+  {
+    "word": "KEYBOARD",
+    "category": "Object",
+    "hint": "Input device for computers"
+  },
+  {
+    "word": "LIZARD",
+    "category": "Animal",
+    "hint": "Reptile with scales"
+  },
+  {
+    "word": "MAGNET",
+    "category": "Object",
+    "hint": "Attracts iron"
+  },
+  {
+    "word": "NEBULA",
+    "category": "Space",
+    "hint": "Interstellar cloud of dust and gas"
+  },
+  {
+    "word": "OCTOPUS",
+    "category": "Animal",
+    "hint": "Sea creature with eight arms"
+  },
+  {
+    "word": "QUARTZ",
+    "category": "Mineral",
+    "hint": "Common mineral"
+  },
+  {
+    "word": "RAINBOW",
+    "category": "Nature",
+    "hint": "Multicolored arc in the sky"
+  },
+  {
+    "word": "UNIVERSE",
+    "category": "Space",
+    "hint": "Everything that exists"
+  },
+  {
+    "word": "VACUUM",
+    "category": "Object",
+    "hint": "Removes dirt and dust"
+  },
+  {
+    "word": "WRESTLER",
+    "category": "Person",
+    "hint": "Athlete who grapples"
+  },
+  {
+    "word": "XENOLITH",
+    "category": "Geology",
+    "hint": "Foreign rock in igneous rock"
+  },
+  {
+    "word": "YARN",
+    "category": "Object",
+    "hint": "Spun thread used for knitting"
+  },
+  {
+    "word": "ZODIAC",
+    "category": "Astrology",
+    "hint": "Band of constellations"
+  },
+  {
+    "word": "BICYCLE",
+    "category": "Vehicle",
+    "hint": "Two-wheeled vehicle"
+  },
+  {
+    "word": "CACTUS",
+    "category": "Plant",
+    "hint": "Desert plant with spines"
+  },
+  {
+    "word": "DOLPHIN",
+    "category": "Animal",
+    "hint": "Intelligent marine mammal"
+  },
+  {
+    "word": "EQUATOR",
+    "category": "Geography",
+    "hint": "Imaginary line around the Earth"
+  },
+  {
+    "word": "FALCON",
+    "category": "Animal",
+    "hint": "Bird of prey"
+  },
+  {
+    "word": "GLACIER",
+    "category": "Nature",
+    "hint": "Large mass of ice"
+  },
+  {
+    "word": "ICEBERG",
+    "category": "Nature",
+    "hint": "Large floating mass of ice"
+  },
+  {
+    "word": "JUPITER",
+    "category": "Planet",
+    "hint": "Largest planet in our solar system"
+  },
+  {
+    "word": "ALMOND",
+    "category": "Food",
+    "hint": "Nut often used in desserts"
+  },
+  {
+    "word": "BALLET",
+    "category": "Dance",
+    "hint": "Classical dance form"
+  },
+  {
+    "word": "CASTLE",
+    "category": "Building",
+    "hint": "Medieval fortification"
+  },
+  {
+    "word": "DRAGON",
+    "category": "Mythical",
+    "hint": "Fire-breathing creature"
+  },
+  {
+    "word": "ENGINE",
+    "category": "Object",
+    "hint": "Powers vehicles"
+  },
+  {
+    "word": "FOSSIL",
+    "category": "Science",
+    "hint": "Preserved remains of organisms"
+  },
+  {
+    "word": "GARDEN",
+    "category": "Place",
+    "hint": "Where flowers and vegetables grow"
+  },
+  {
+    "word": "HAMMER",
+    "category": "Tool",
+    "hint": "Used to drive nails"
+  },
+  {
+    "word": "INSECT",
+    "category": "Animal",
+    "hint": "Small creature with six legs"
+  },
+  {
+    "word": "JOURNY",
+    "category": "Action",
+    "hint": "Act of traveling"
+  },
+  {
+    "word": "KETTLE",
+    "category": "Object",
+    "hint": "Used to boil water"
+  },
+  {
+    "word": "LADDER",
+    "category": "Tool",
+    "hint": "Used to reach high places"
+  },
+  {
+    "word": "MARKET",
+    "category": "Place",
+    "hint": "Where goods are bought and sold"
+  },
+  {
+    "word": "NAPKIN",
+    "category": "Object",
+    "hint": "Used while eating"
+  },
+  {
+    "word": "OBJECT",
+    "category": "General",
+    "hint": "A thing that can be seen or touched"
+  },
+  {
+    "word": "PIRATE",
+    "category": "Person",
+    "hint": "Sailor who steals at sea"
+  },
+  {
+    "word": "QUICKS",
+    "category": "Action",
+    "hint": "Moves swiftly"
+  },
+  {
+    "word": "RULERS",
+    "category": "Object",
+    "hint": "Used to measure"
+  },
+  {
+    "word": "SPOONS",
+    "category": "Object",
+    "hint": "Used to eat soup"
+  },
+  {
+    "word": "TUNNEL",
+    "category": "Structure",
+    "hint": "Underground passage"
+  },
+  {
+    "word": "UNISON",
+    "category": "Music",
+    "hint": "Simultaneous performance"
+  },
+  {
+    "word": "VACUUM",
+    "category": "Object",
+    "hint": "Used to clean floors"
+  },
+  {
+    "word": "WIZARD",
+    "category": "Mythical",
+    "hint": "Magical spell caster"
+  },
+  {
+    "word": "XYLOPH",
+    "category": "Music",
+    "hint": "Percussion instrument"
+  },
+  {
+    "word": "YAWNER",
+    "category": "Action",
+    "hint": "One who opens mouth widely in tiredness"
+  },
+  {
+    "word": "ZITHER",
+    "category": "Music",
+    "hint": "Stringed instrument"
+  },
+  {
+    "word": "ABACUS",
+    "category": "Object",
+    "hint": "Old counting device"
+  },
+  {
+    "word": "BANANA",
+    "category": "Fruit",
+    "hint": "Yellow and curved fruit"
+  },
+  {
+    "word": "CANYON",
+    "category": "Nature",
+    "hint": "Deep gorge"
+  },
+  {
+    "word": "DOCTOR",
+    "category": "Profession",
+    "hint": "Treats patients"
+  },
+  {
+    "word": "EMPIRE",
+    "category": "History",
+    "hint": "Large territory ruled by emperor"
+  },
+  {
+    "word": "FURNIT",
+    "category": "Object",
+    "hint": "Includes tables and chairs"
+  },
+  {
+    "word": "GUITAR",
+    "category": "Music",
+    "hint": "String instrument"
+  },
+  {
+    "word": "HELMET",
+    "category": "Object",
+    "hint": "Protects the head"
+  },
+  {
+    "word": "ISLAND",
+    "category": "Place",
+    "hint": "Land surrounded by water"
+  },
+  {
+    "word": "JUNGLE",
+    "category": "Nature",
+    "hint": "Dense forest"
+  },
+  {
+    "word": "KITTEN",
+    "category": "Animal",
+    "hint": "Young cat"
+  },
+  {
+    "word": "LANTER",
+    "category": "Object",
+    "hint": "Portable light"
+  },
+  {
+    "word": "MONKEY",
+    "category": "Animal",
+    "hint": "Climbs trees and eats bananas"
+  },
+  {
+    "word": "NUGGET",
+    "category": "Food",
+    "hint": "Small piece of fried chicken"
+  },
+  {
+    "word": "OYSTER",
+    "category": "Animal",
+    "hint": "Sea creature with a shell"
+  },
+  {
+    "word": "POCKET",
+    "category": "Object",
+    "hint": "Holds small items on clothes"
+  },
+  {
+    "word": "QUOTES",
+    "category": "Writing",
+    "hint": "Spoken or written phrases"
+  },
+  {
+    "word": "ROCKET",
+    "category": "Vehicle",
+    "hint": "Launches into space"
+  },
+  {
+    "word": "SCHOOL",
+    "category": "Place",
+    "hint": "Place for education"
+  },
+  {
+    "word": "TROPHY",
+    "category": "Object",
+    "hint": "Award for achievement"
+  },
+  {
+    "word": "UMPIRE",
+    "category": "Person",
+    "hint": "Oversees a sports game"
+  },
+  {
+    "word": "VELVET",
+    "category": "Material",
+    "hint": "Soft fabric"
+  },
+  {
+    "word": "WALNUT",
+    "category": "Food",
+    "hint": "Tree nut"
+  },
+  {
+    "word": "YELLOW",
+    "category": "Color",
+    "hint": "Color of the sun"
+  },
+  {
+    "word": "ZIGZAG",
+    "category": "Pattern",
+    "hint": "Back-and-forth line"
+  },
+  {
+    "word": "ANCHOR",
+    "category": "Object",
+    "hint": "Holds ship in place"
+  },
+  {
+    "word": "BOTTLE",
+    "category": "Object",
+    "hint": "Holds liquids"
+  },
+  {
+    "word": "CANDLE",
+    "category": "Object",
+    "hint": "Burns to give light"
+  },
+  {
+    "word": "DINNER",
+    "category": "Meal",
+    "hint": "Evening meal"
+  },
+  {
+    "word": "ESCAPE",
+    "category": "Action",
+    "hint": "Get away"
+  },
+  {
+    "word": "FARMER",
+    "category": "Person",
+    "hint": "Grows crops"
+  },
+  {
+    "word": "GOBLET",
+    "category": "Object",
+    "hint": "Fancy drinking glass"
+  },
+  {
+    "word": "HERMIT",
+    "category": "Person",
+    "hint": "Lives in solitude"
+  },
+  {
+    "word": "INSIDE",
+    "category": "Position",
+    "hint": "Within something"
+  },
+  {
+    "word": "JACKET",
+    "category": "Clothing",
+    "hint": "Worn to keep warm"
+  },
+  {
+    "word": "KINDLE",
+    "category": "Action",
+    "hint": "To start a fire"
+  },
+  {
+    "word": "LIZARD",
+    "category": "Animal",
+    "hint": "Reptile"
+  },
+  {
+    "word": "MARKER",
+    "category": "Object",
+    "hint": "Used to draw or write"
+  },
+  {
+    "word": "NEEDLE",
+    "category": "Object",
+    "hint": "Used in sewing"
+  },
+  {
+    "word": "ORCHID",
+    "category": "Plant",
+    "hint": "A type of flower"
+  },
+  {
+    "word": "PICKLE",
+    "category": "Food",
+    "hint": "Cucumber in brine"
+  },
+  {
+    "word": "QUOKKA",
+    "category": "Animal",
+    "hint": "Smiling Australian marsupial"
+  },
+  {
+    "word": "ROSTER",
+    "category": "List",
+    "hint": "List of names"
+  },
+  {
+    "word": "SINGER",
+    "category": "Person",
+    "hint": "Performs songs"
+  },
+  {
+    "word": "TUNICS",
+    "category": "Clothing",
+    "hint": "Simple garment"
+  },
+  {
+    "word": "UNFOLD",
+    "category": "Action",
+    "hint": "Open up"
+  },
+  {
+    "word": "VESTED",
+    "category": "Clothing",
+    "hint": "Wearing a vest"
+  },
+  {
+    "word": "WIDGET",
+    "category": "Tech",
+    "hint": "Small app feature"
+  },
+  {
+    "word": "YAWNER",
+    "category": "Person",
+    "hint": "Opens mouth when sleepy"
+  },
+  {
+    "word": "ZAPPER",
+    "category": "Tech",
+    "hint": "Remote control"
+  },
+  {
+    "word": "ARTIST",
+    "category": "Person",
+    "hint": "Creates visual art"
+  },
+  {
+    "word": "BUNGEE",
+    "category": "Sport",
+    "hint": "Jumping with a cord"
+  },
+  {
+    "word": "CRAYON",
+    "category": "Object",
+    "hint": "Used for coloring"
+  },
+  {
+    "word": "DETOUR",
+    "category": "Action",
+    "hint": "Alternate route"
+  },
+  {
+    "word": "ENVELO",
+    "category": "Object",
+    "hint": "Holds a letter"
+  },
+  {
+    "word": "FIDGET",
+    "category": "Action",
+    "hint": "Move restlessly"
+  },
+  {
+    "word": "GLIDER",
+    "category": "Vehicle",
+    "hint": "Aircraft without engine"
+  },
+  {
+    "word": "HUNTER",
+    "category": "Person",
+    "hint": "Chases and kills animals"
+  },
+  {
+    "word": "IMPACT",
+    "category": "Event",
+    "hint": "Collision or effect"
+  },
+  {
+    "word": "JUGGLE",
+    "category": "Action",
+    "hint": "Keep objects in the air"
+  },
+  {
+    "word": "KERNEL",
+    "category": "Part",
+    "hint": "Center of a seed"
+  },
+  {
+    "word": "astral",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "candid",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "effigy",
+    "category": "artifact",
+    "hint": "An object made by people, often with cultural significance."
+  },
+  {
+    "word": "fragment",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "gadget",
+    "category": "technology",
+    "hint": "Related to tools or modern devices."
+  },
+  {
+    "word": "harbor",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "iconic",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "jovial",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "kernel",
+    "category": "food",
+    "hint": "Something edible or related to eating."
+  },
+  {
+    "word": "lattice",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "mosaic",
+    "category": "artifact",
+    "hint": "An object made by people, often with cultural significance."
+  },
+  {
+    "word": "nectar",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "opaline",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "quaint",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "ramble",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "satire",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "tangible",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "utopia",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "vortex",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "waltz",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "zephyr",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "bokeh",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "cobalt",
+    "category": "artifact",
+    "hint": "An object made by people, often with cultural significance."
+  },
+  {
+    "word": "dimple",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "eon",
+    "category": "time",
+    "hint": "A moment or period."
+  },
+  {
+    "word": "fathom",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "glisten",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "hollow",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "infuse",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "jigsaw",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "kinetic",
+    "category": "technology",
+    "hint": "Related to tools or modern devices."
+  },
+  {
+    "word": "lunar",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "murmur",
+    "category": "sound",
+    "hint": "An auditory phenomenon."
+  },
+  {
+    "word": "nostril",
+    "category": "body",
+    "hint": "Part of a living creature."
+  },
+  {
+    "word": "opaque",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "parcel",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "quiver",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "ripple",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "safeguard",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "tremble",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "untwist",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "vagabond",
+    "category": "person",
+    "hint": "A type of living creature."
+  },
+  {
+    "word": "whistle",
+    "category": "sound",
+    "hint": "An auditory phenomenon."
+  },
+  {
+    "word": "yonder",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "zealous",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "arcane",
+    "category": "artifact",
+    "hint": "An object made by people, often with cultural significance."
+  },
+  {
+    "word": "banter",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "carnal",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "denote",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "elixir",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "forage",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "gambit",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "harrow",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "imbue",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "jargon",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "kinship",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "lament",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "mingle",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "nimble",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "overture",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "pinnacle",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "quibble",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "resolve",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "serene",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "tactile",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "ungainly",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "vigil",
+    "category": "time",
+    "hint": "A moment or period."
+  },
+  {
+    "word": "whimsy",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "yearn",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "abound",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "befriend",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "chide",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "dispel",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "enigma",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "fiasco",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "honour",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "illume",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "justify",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "kennel",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "mantle",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "nomadic",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "oblige",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "plume",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "quartz",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "radiant",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "saturate",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "unravel",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "variety",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "whittle",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "yodel",
+    "category": "sound",
+    "hint": "An auditory phenomenon."
+  },
+  {
+    "word": "zealot",
+    "category": "person",
+    "hint": "A type of living creature."
+  },
+  {
+    "word": "adept",
+    "category": "person",
+    "hint": "A type of living creature."
+  },
+  {
+    "word": "brisk",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "crater",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "delve",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "evoke",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "frugal",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "glimmer",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "haptic",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "jaunt",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "knoll",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "lucid",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "meddle",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "nucleus",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "oracle",
+    "category": "person",
+    "hint": "A type of living creature."
+  },
+  {
+    "word": "parable",
+    "category": "artifact",
+    "hint": "An object made by people, often with cultural significance."
+  },
+  {
+    "word": "robust",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "subtle",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "utmost",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "vacant",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "wobble",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "xylem",
+    "category": "body",
+    "hint": "Part of a living creature."
+  },
+  {
+    "word": "yearling",
+    "category": "animal",
+    "hint": "A living creature."
+  },
+  {
+    "word": "zenith",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "accolade",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "ballistic",
+    "category": "technology",
+    "hint": "Related to tools or modern devices."
+  },
+  {
+    "word": "cipher",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "doleful",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "eclectic",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "fretful",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "glacial",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "heritage",
+    "category": "artifact",
+    "hint": "An object made by people, often with cultural significance."
+  },
+  {
+    "word": "jocular",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "languid",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "mediate",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "nocturnal",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "opulent",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "prelude",
+    "category": "artifact",
+    "hint": "An object made by people, often with cultural significance."
+  },
+  {
+    "word": "raffish",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "sanguine",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "timbre",
+    "category": "sound",
+    "hint": "An auditory phenomenon."
+  },
+  {
+    "word": "untamed",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "vantage",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "withdraw",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "xenial",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "yawn",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "aplomb",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "ballast",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "besiege",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "corpus",
+    "category": "body",
+    "hint": "Part of a living creature."
+  },
+  {
+    "word": "drowsy",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "empathy",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "fallacy",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "gratify",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "havoc",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "abacus",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "ballad",
+    "category": "artifact",
+    "hint": "An object made by people, often with cultural significance."
+  },
+  {
+    "word": "canal",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "deftly",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "elastic",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "fervent",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "goblet",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "haunt",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "inkwell",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "jaguar",
+    "category": "animal",
+    "hint": "A living creature."
+  },
+  {
+    "word": "kiosk",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "lagoon",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "matrix",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "nebula",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "orchid",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "pliers",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "quasar",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "relics",
+    "category": "artifact",
+    "hint": "An object made by people, often with cultural significance."
+  },
+  {
+    "word": "scribble",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "tawdry",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "ulcer",
+    "category": "body",
+    "hint": "Part of a living creature."
+  },
+  {
+    "word": "vault",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "widget",
+    "category": "technology",
+    "hint": "Related to tools or modern devices."
+  },
+  {
+    "word": "xenon",
+    "category": "technology",
+    "hint": "Related to tools or modern devices."
+  },
+  {
+    "word": "yarrow",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "zircon",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "artisan",
+    "category": "person",
+    "hint": "A type of living creature."
+  },
+  {
+    "word": "belfry",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "cognac",
+    "category": "food",
+    "hint": "Something edible or related to eating."
+  },
+  {
+    "word": "dossier",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "fuddle",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "gargle",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "hyacinth",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "incisor",
+    "category": "body",
+    "hint": "Part of a living creature."
+  },
+  {
+    "word": "junction",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "lichen",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "marshy",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "notch",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "obsolete",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "perfume",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "rancid",
+    "category": "food",
+    "hint": "Something edible or related to eating."
+  },
+  {
+    "word": "somber",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "tangent",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "unearth",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "viscous",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "wrought",
+    "category": "artifact",
+    "hint": "An object made by people, often with cultural significance."
+  },
+  {
+    "word": "whistle",
+    "category": "sound",
+    "hint": "An auditory phenomenon."
+  },
+  {
+    "word": "apogee",
+    "category": "time",
+    "hint": "A moment or period."
+  },
+  {
+    "word": "banish",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "concede",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "enchant",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "fumble",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "granular",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "homily",
+    "category": "artifact",
+    "hint": "An object made by people, often with cultural significance."
+  },
+  {
+    "word": "incite",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "juncture",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "nudged",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "papyrus",
+    "category": "artifact",
+    "hint": "An object made by people, often with cultural significance."
+  },
+  {
+    "word": "quaff",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "safari",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "tether",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "unfurl",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "valiant",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "writhe",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "xanadu",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "yawning",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "zeal",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "banquet",
+    "category": "food",
+    "hint": "Something edible or related to eating."
+  },
+  {
+    "word": "credence",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "delirium",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "efflux",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "fuchsia",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "inkling",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "jettison",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "kiln",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "larceny",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "monstera",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "pavilion",
+    "category": "place",
+    "hint": "A location or setting."
+  },
+  {
+    "word": "quipped",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "rubric",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "torrent",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "unison",
+    "category": "sound",
+    "hint": "An auditory phenomenon."
+  },
+  {
+    "word": "wander",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "xylene",
+    "category": "technology",
+    "hint": "Related to tools or modern devices."
+  },
+  {
+    "word": "yummy",
+    "category": "food",
+    "hint": "Something edible or related to eating."
+  },
+  {
+    "word": "abate",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "brittle",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "catalyst",
+    "category": "technology",
+    "hint": "Related to tools or modern devices."
+  },
+  {
+    "word": "eclipse",
+    "category": "nature",
+    "hint": "Something found in the natural world."
+  },
+  {
+    "word": "fractal",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "grumble",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "hiatus",
+    "category": "time",
+    "hint": "A moment or period."
+  },
+  {
+    "word": "jalopy",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "kismet",
+    "category": "emotion",
+    "hint": "A feeling one might experience."
+  },
+  {
+    "word": "tackle",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "uproot",
+    "category": "action",
+    "hint": "A verb describing an activity."
+  },
+  {
+    "word": "valise",
+    "category": "object",
+    "hint": "A tangible item or thing."
+  },
+  {
+    "word": "wraith",
+    "category": "person",
+    "hint": "A type of living creature."
+  }
 ]

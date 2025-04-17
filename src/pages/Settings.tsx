@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowLeft, Music, Volume2 } from "lucide-react";
+import { ArrowLeft, Music, Volume2, User, PersonStanding } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "@/components/ui/use-toast";
 import {
@@ -22,17 +22,20 @@ const Settings = () => {
   const { musicOptions, selectedMusic, playMusic, updateVolume } = useMusicPlayer();
   const { playClick } = useSoundEffects();
   const [headAccessory, setHeadAccessory] = useState("none");
+  const [headType, setHeadType] = useState("circleFace");
+  const [fullPreview, setFullPreview] = useState(false);
 
   useEffect(() => {
     const savedMusicVolume = localStorage.getItem("hangmanMusicVolume");
     const savedSoundVolume = localStorage.getItem("hangmanSoundVolume");
     const savedDifficulty = localStorage.getItem("hangmanDifficulty");
     const savedHeadAccessory = localStorage.getItem("characterHeadAccessories");
-
+    const savedHeadType = localStorage.getItem("characterHeadType");
     if (savedMusicVolume) setMusicVolume(parseInt(savedMusicVolume));
     if (savedSoundVolume) setSoundEffectsVolume(parseInt(savedSoundVolume));
     if (savedDifficulty) setDifficulty(savedDifficulty);
     if (savedHeadAccessory) setHeadAccessory(savedHeadAccessory);
+    if (savedHeadType) setHeadType(savedHeadType);
   }, []);
 
   const saveSettings = () => {
@@ -57,6 +60,7 @@ const Settings = () => {
   const saveCharacterSettings = () => {
     playClick();
     localStorage.setItem("characterHeadAccessories", headAccessory);
+    localStorage.setItem("characterHeadType", headType);
     toast({
       title: "Character Settings Saved",
       description: "Your character preferences have been updated successfully!",
@@ -73,6 +77,11 @@ const Settings = () => {
     { id: "roundHat", name: "Round Hat" },
     { id: "crown", name: "Crown" }
   ];
+
+  const headTypes = [
+    { id: "circleFace", name: "Circle Face" },
+    { id: "squareFace", name: "Square Face" },
+  ]
 
   return (
     <div className="min-h-screen bg-white dark:bg-black p-4">
@@ -92,15 +101,27 @@ const Settings = () => {
         <div className="space-y-8">
 
           <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-xl">
-            <h2 className="text-xl font-semibold mb-5 mt-2 text-center">Character Customization</h2>
+            <h2 className="text-xl font-semibold mb-5 mt-2 text-center">Character Settings</h2>
             
             <div className="flex flex-col items-center justify-center mb-6">
-              <div className="w-48 h-24 overflow-hidden bg-muted dark:bg-gray-700 rounded-lg flex items-center justify-center">
+              <div className={`relative w-48 h-24 overflow-hidden bg-muted dark:bg-gray-700 rounded-lg flex items-center justify-center ${fullPreview ? "w-48 h-48 " : ""}`}>
+                <button
+                  onClick={() => setFullPreview(!fullPreview)}
+                  className="absolute z-10 top-2 right-2 p-1 rounded-md bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 transition-colors"
+                  aria-label={fullPreview ? "Show face only" : "Show full character"}
+                >
+                  {fullPreview ? (
+                    <User size={16} className="text-hangman-primary dark:text-hangman-secondary" />
+                  ) : (
+                    <PersonStanding size={16} className="text-hangman-primary dark:text-hangman-secondary" />
+                  )}
+                </button>
                 <CharacterPreview
                   headAccessory={headAccessory}
-                  showTorso={false}
-                  showArms={false}
-                  showLegs={false}
+                  headType={headType}
+                  showTorso={true}
+                  showArms={true}
+                  showLegs={fullPreview}
                 />
               </div>
             </div>
@@ -110,7 +131,7 @@ const Settings = () => {
                 <label className="block text-sm font-medium mb-2">
                   Head Accessory
                 </label>
-                <Select value={headAccessory} onValueChange={setHeadAccessory}>
+                <Select value={headAccessory} onValueChange={(value) => {setFullPreview(false); setHeadAccessory(value);}}>
                   <SelectTrigger className="w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-hangman-primary focus:border-transparent">
                     <SelectValue placeholder="Select Head Accessory" />
                   </SelectTrigger>
@@ -122,6 +143,28 @@ const Settings = () => {
                         className="focus:bg-hangman-primary/10 focus:text-hangman-primary"
                       >
                         {accessory.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Head Type
+                </label>
+                <Select value={headType} onValueChange={(value) => {setFullPreview(false); setHeadType(value);}}>
+                  <SelectTrigger className="w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-hangman-primary focus:border-transparent">
+                    <SelectValue placeholder="Select Head Type" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600">
+                    {headTypes.map((type) => (
+                      <SelectItem 
+                        key={type.id} 
+                        value={type.id}
+                        className="focus:bg-hangman-primary/10 focus:text-hangman-primary"
+                      >
+                        {type.name}
                       </SelectItem>
                     ))}
                   </SelectContent>
