@@ -1,5 +1,7 @@
 import { useRef, useEffect } from 'react';
 
+const audioCache = new Map<string, HTMLAudioElement>();
+
 export const useSoundEffects = () => {
   const clickSound = useRef<HTMLAudioElement | null>(null);
   const rightGuessSound = useRef<HTMLAudioElement | null>(null);
@@ -7,12 +9,24 @@ export const useSoundEffects = () => {
   const loseSound = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    clickSound.current = new Audio('/audio/sound/click.wav');
-    rightGuessSound.current = new Audio('/audio/sound/right-guess.wav');
-    wrongGuessSound.current = new Audio('/audio/sound/wrong-guess.wav');
-    loseSound.current = new Audio('/audio/sound/lose.wav');
+    if (!audioCache.has('click')) {
+      audioCache.set('click', new Audio('/audio/sound/click.wav'));
+    }
+    if (!audioCache.has('right-guess')) {
+      audioCache.set('right-guess', new Audio('/audio/sound/right-guess.wav'));
+    }
+    if (!audioCache.has('wrong-guess')) {
+      audioCache.set('wrong-guess', new Audio('/audio/sound/wrong-guess.wav'));
+    }
+    if (!audioCache.has('lose')) {
+      audioCache.set('lose', new Audio('/audio/sound/lose.wav'));
+    }
 
-    // Set initial volume from localStorage
+    clickSound.current = audioCache.get('click')!;
+    rightGuessSound.current = audioCache.get('right-guess')!;
+    wrongGuessSound.current = audioCache.get('wrong-guess')!;
+    loseSound.current = audioCache.get('lose')!;
+
     const savedVolume = parseInt(localStorage.getItem('hangmanSoundVolume') || '75');
     const volume = savedVolume / 100;
 
@@ -22,7 +36,6 @@ export const useSoundEffects = () => {
     loseSound.current.volume = volume * 0.3;
 
     return () => {
-      // Cleanup
       clickSound.current = null;
       rightGuessSound.current = null;
       wrongGuessSound.current = null;

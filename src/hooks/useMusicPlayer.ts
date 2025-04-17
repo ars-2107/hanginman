@@ -9,20 +9,22 @@ const MUSIC_OPTIONS = [
 
 const VOLUME_SCALING_FACTOR = 0.1;
 
+const musicCache = new Map<string, HTMLAudioElement>();
+
 export const useMusicPlayer = () => {
   const [selectedMusic, setSelectedMusic] = useState('none');
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Load saved music preference
     const savedMusic = localStorage.getItem('hangmanMusic');
     if (savedMusic) {
       setSelectedMusic(savedMusic);
     }
 
-    // Initialize audio element
-    audioRef.current = new Audio();
-    audioRef.current.loop = true;
+    if (!audioRef.current) {
+      audioRef.current = new Audio();
+      audioRef.current.loop = true;
+    }
 
     return () => {
       if (audioRef.current) {
@@ -35,7 +37,6 @@ export const useMusicPlayer = () => {
   const playMusic = (musicId: string) => {
     if (!audioRef.current) return;
 
-    // Stop current music
     audioRef.current.pause();
     audioRef.current.currentTime = 0;
 
@@ -45,8 +46,16 @@ export const useMusicPlayer = () => {
       return;
     }
 
-    // Load and play new music
-    audioRef.current.src = `/audio/music/${musicId}.mp3`;
+    if (!musicCache.has(musicId)) {
+      const audio = new Audio();
+      audio.src = `/audio/music/${musicId}.mp3`;
+      audio.loop = true;
+      musicCache.set(musicId, audio);
+    }
+
+    const cachedAudio = musicCache.get(musicId)!;
+    audioRef.current = cachedAudio;
+
     const savedVolume = parseInt(localStorage.getItem('hangmanMusicVolume') || '0');
     const musicOption = MUSIC_OPTIONS.find(option => option.id === musicId);
     const volumeScale = musicOption?.volumeScale || 0.1;
