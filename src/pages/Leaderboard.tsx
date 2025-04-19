@@ -3,9 +3,9 @@ import { ArrowLeft, Trophy, Award, Crown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const MOCK_LEADERBOARD = [
-  { rank: 1, name: 'ARS', difficulty: 'Hard', score: 2500, words: 15 },
-  { rank: 2, name: 'DIV', difficulty: 'Hard', score: 2112, words: 13 },
-  { rank: 3, name: 'HAR', difficulty: 'Hard', score: 2000, words: 12 },
+  { rank: 1, name: 'ARS', difficulty: 'Hard', score: 2577, words: 15 },
+  { rank: 2, name: 'DEEP', difficulty: 'Hard', score: 2112, words: 13 },
+  { rank: 3, name: 'One4', difficulty: 'Hard', score: 2008, words: 12 },
   { rank: 4, name: 'RYN', difficulty: 'Easy', score: 1900, words: 12 },
   { rank: 5, name: 'TOM', difficulty: 'Medium', score: 1700, words: 11 },
   { rank: 6, name: 'KAR', difficulty: 'Hard', score: 1500, words: 10 },
@@ -72,7 +72,6 @@ const Leaderboard = () => {
             <div className="flex justify-start pl-2">Player</div>
             <div className="flex justify-center">Score</div>
             <div className="flex justify-center">Words</div>
-            <div className="flex justify-center">Streak</div>
           </div>
 
           {/* Table Body */}
