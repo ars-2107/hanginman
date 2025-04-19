@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 const audioCache = new Map<string, HTMLAudioElement>();
 
@@ -7,6 +7,10 @@ export const useSoundEffects = () => {
   const rightGuessSound = useRef<HTMLAudioElement | null>(null);
   const wrongGuessSound = useRef<HTMLAudioElement | null>(null);
   const loseSound = useRef<HTMLAudioElement | null>(null);
+  const [isEnabled, setIsEnabled] = useState(() => {
+    const saved = localStorage.getItem('hangmanSoundEnabled');
+    return saved === null ? true : saved === 'true';
+  });
 
   useEffect(() => {
     if (!audioCache.has('click')) {
@@ -44,28 +48,28 @@ export const useSoundEffects = () => {
   }, []);
 
   const playClick = () => {
-    if (clickSound.current) {
+    if (clickSound.current && isEnabled) {
       clickSound.current.currentTime = 0;
       clickSound.current.play().catch(console.error);
     }
   };
 
   const playRightGuess = () => {
-    if (rightGuessSound.current) {
+    if (rightGuessSound.current && isEnabled) {
       rightGuessSound.current.currentTime = 0;
       rightGuessSound.current.play().catch(console.error);
     }
   };
 
   const playWrongGuess = () => {
-    if (wrongGuessSound.current) {
+    if (wrongGuessSound.current && isEnabled) {
       wrongGuessSound.current.currentTime = 0;
       wrongGuessSound.current.play().catch(console.error);
     }
   };
 
   const playLose = () => {
-    if (loseSound.current) {
+    if (loseSound.current && isEnabled) {
       loseSound.current.currentTime = 0;
       loseSound.current.play().catch(console.error);
     }
@@ -79,11 +83,19 @@ export const useSoundEffects = () => {
     if (loseSound.current) loseSound.current.volume = normalizedVolume;
   };
 
+  const toggleSoundEffects = () => {
+    const newState = !isEnabled;
+    setIsEnabled(newState);
+    localStorage.setItem('hangmanSoundEnabled', newState.toString());
+  };
+
   return {
     playClick,
     playRightGuess,
     playWrongGuess,
     playLose,
     updateVolume,
+    isEnabled,
+    toggleSoundEffects,
   };
 }; 

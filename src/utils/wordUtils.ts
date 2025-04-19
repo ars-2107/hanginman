@@ -1,7 +1,6 @@
-import allWordList from '../data/words.json';
-import wordList from '../data/words-1.json';
+import randomWordList from '../data/words.json';
+import fallbackWordList from '../data/fallback-words.json';
 
-// const RANDOM_WORD_API = 'https://random-word-api.herokuapp.com/word';
 const DATAMUSE_API = 'https://api.datamuse.com/words';
 const DICTIONARY_API = 'https://api.dictionaryapi.dev/api/v2/entries/en';
 
@@ -20,7 +19,7 @@ export type WordData = {
 };
 
 const getFallbackWord = (): WordData => {
-  return wordList[Math.floor(Math.random() * wordList.length)];
+  return fallbackWordList[Math.floor(Math.random() * fallbackWordList.length)];
 };
 
 const getWordDefinition = async (word: string): Promise<string | null> => {
@@ -49,23 +48,12 @@ export const getRandomWord = async (): Promise<WordData> => {
   while (attempts < maxAttempts) {
     try {
       const length = Math.floor(Math.random() * 5) + 4;
-      // const response = await fetch(`${RANDOM_WORD_API}?lang=en&length=${length}&number=1`);
+      const wordsOfLength = randomWordList.filter(word => word.length === length);
       
-      // Filter words of the desired length from allWordList
-      const wordsOfLength = allWordList.filter(word => word.length === length);
       if (wordsOfLength.length === 0) {
-      // if (!response.ok) {
         attempts++;
         continue;
       }
-      
-      
-      // const [randomWord] = await response.json();
-      
-      // if (!randomWord || randomWord.length < 4) {
-      //   attempts++;
-      //   continue;
-      // }
 
       const randomWord = wordsOfLength[Math.floor(Math.random() * wordsOfLength.length)];
       

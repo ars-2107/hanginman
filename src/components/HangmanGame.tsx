@@ -126,7 +126,7 @@ const HangmanGame = () => {
     toast({
       title: "Word Skipped",
       description: `Time penalty: -${TIME_PENALTY} seconds`,
-      duration: 5000,
+      duration: 3000,
     });
   }, [fetchNewWord, playClick]);
 
@@ -164,7 +164,7 @@ const HangmanGame = () => {
       toast({
         title: "Word Complete!",
         description: `+${wordScore} points | +${timeReward}s | Streak: ${streakCount + 1}`,
-        duration: 5000,
+        duration: 3000,
       });
     }
   }, [isWordGuessed, gameOver, isLoading, currentWord.word.length, streakCount, fetchNewWord, wordLoadTime]);

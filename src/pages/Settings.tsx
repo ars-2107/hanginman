@@ -20,7 +20,7 @@ const Settings = () => {
   const [difficulty, setDifficulty] = useState("medium");
   const [saveStatus, setSaveStatus] = useState("");
   const { musicOptions, selectedMusic, playMusic, updateVolume } = useMusicPlayer();
-  const { playClick } = useSoundEffects();
+  const { playClick, isEnabled, toggleSoundEffects } = useSoundEffects();
   const [headAccessory, setHeadAccessory] = useState("none");
   const [headType, setHeadType] = useState("circleFace");
   const [fullPreview, setFullPreview] = useState(false);
@@ -44,6 +44,16 @@ const Settings = () => {
     localStorage.setItem("hangmanMusicVolume", musicVolume.toString());
     localStorage.setItem("hangmanSoundVolume", soundEffectsVolume.toString());
     localStorage.setItem("hangmanDifficulty", difficulty);
+
+    if (soundEffectsVolume === 0) {
+      toggleSoundEffects();
+    } else if (!isEnabled) {
+      toggleSoundEffects();
+    }
+    
+    if (musicVolume === 0) {
+      playMusic('none');
+    }
   
     toast({
       title: "Game Settings Saved",
@@ -52,9 +62,20 @@ const Settings = () => {
     });
   };
 
+  const handleMusicChange = (value: string) => {
+    if (musicVolume === 0) {
+      playMusic('none');
+    } else {
+      playMusic(value);
+    }
+  }
+
   const handleMusicVolumeChange = (value: number) => {
     setMusicVolume(value);
     updateVolume(value);
+    if (value === 0) {
+      playMusic('none');
+    }
   };
 
   const saveCharacterSettings = () => {
@@ -190,7 +211,7 @@ const Settings = () => {
                 <label className="block text-sm font-medium mb-2">
                   Background Music
                 </label>
-                <Select value={selectedMusic} onValueChange={playMusic}>
+                <Select value={selectedMusic} onValueChange={handleMusicChange}>
                   <SelectTrigger className="w-full bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-hangman-primary focus:border-transparent">
                     <SelectValue placeholder="Select music" />
                   </SelectTrigger>

@@ -3,16 +3,16 @@ import { ArrowLeft, Trophy, Award, Crown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const MOCK_LEADERBOARD = [
-  { rank: 1, name: 'ARS', difficulty: 'Easy', score: 2500, words: 15, streak: 8 },
-  { rank: 2, name: 'HAR', difficulty: 'Hard', score: 2300, words: 14, streak: 7 },
-  { rank: 3, name: 'BAT', difficulty: 'Hard', score: 2100, words: 13, streak: 6 },
-  { rank: 4, name: 'RYN', difficulty: 'Easy', score: 1900, words: 12, streak: 5 },
-  { rank: 5, name: 'TOM', difficulty: 'Medium', score: 1700, words: 11, streak: 4 },
-  { rank: 6, name: 'KAR', difficulty: 'Hard', score: 1500, words: 10, streak: 3 },
-  { rank: 7, name: 'RAH', difficulty: 'Easy', score: 1300, words: 9, streak: 2 },
-  { rank: 8, name: 'JOK', difficulty: 'Medium', score: 1100, words: 8, streak: 1 },
-  { rank: 9, name: 'SHA', difficulty: 'Hard', score: 900, words: 7, streak: 1 },
-  { rank: 10, name: 'XAV', difficulty: 'Easy', score: 700, words: 6, streak: 1 },
+  { rank: 1, name: 'ARS', difficulty: 'Hard', score: 2500, words: 15 },
+  { rank: 2, name: 'DIV', difficulty: 'Hard', score: 2112, words: 13 },
+  { rank: 3, name: 'HAR', difficulty: 'Hard', score: 2000, words: 12 },
+  { rank: 4, name: 'RYN', difficulty: 'Easy', score: 1900, words: 12 },
+  { rank: 5, name: 'TOM', difficulty: 'Medium', score: 1700, words: 11 },
+  { rank: 6, name: 'KAR', difficulty: 'Hard', score: 1500, words: 10 },
+  { rank: 7, name: 'RAH', difficulty: 'Easy', score: 1300, words: 9 },
+  { rank: 8, name: 'JOK', difficulty: 'Medium', score: 1100, words: 8 },
+  { rank: 9, name: 'SHA', difficulty: 'Hard', score: 900, words: 7 },
+  { rank: 10, name: 'XAV', difficulty: 'Easy', score: 700, words: 6 },
 ];
 
 const Leaderboard = () => {
