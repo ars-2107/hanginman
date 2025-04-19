@@ -67,7 +67,7 @@ const Leaderboard = () => {
 
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
           {/* Header */}
-          <div className="grid grid-cols-5 gap-2 p-4 bg-gradient-to-r from-hangman-primary/10 to-purple-500/10 dark:from-hangman-secondary/20 dark:to-purple-600/20 text-gray-700 dark:text-gray-200 font-semibold uppercase text-xs tracking-wider">
+          <div className="grid grid-cols-4 gap-2 p-4 bg-gradient-to-r from-hangman-primary/10 to-purple-500/10 dark:from-hangman-secondary/20 dark:to-purple-600/20 text-gray-700 dark:text-gray-200 font-semibold uppercase text-xs tracking-wider">
             <div className="flex justify-center">Rank</div>
             <div className="flex justify-start pl-2">Player</div>
             <div className="flex justify-center">Score</div>
@@ -79,7 +79,7 @@ const Leaderboard = () => {
             {getSortedLeaderboard(MOCK_LEADERBOARD).map((player) => (
               <div
                 key={player.rank}
-                className={`grid grid-cols-5 gap-2 p-4 items-center text-gray-700 dark:text-gray-300 ${
+                className={`grid grid-cols-4 gap-2 p-4 items-center text-gray-700 dark:text-gray-300 ${
                   player.rank <= 3 ? 'bg-gradient-to-r from-gray-50 to-gray-50 dark:from-gray-800 dark:to-gray-800' : ''
                 }`}
               >
